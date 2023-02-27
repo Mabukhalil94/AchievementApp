@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="recordModel"
+            type="com.example.achievement.data.model.RecordResponseModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="20dp"
+        android:alpha="@{recordModel.active ? 1f : 0.5f}"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_personal_record"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:imageUrl="@{recordModel.image}"
+            android:layout_gravity="center"
+            tools:src="@drawable/record" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_personal_record"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:paddingHorizontal="10dp"
+            android:text="@{recordModel.title}"
+            tools:text="health" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_label_record"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:paddingHorizontal="10dp"
+            android:text="@{recordModel.label}"
+            tools:text="00:00" />
+
+    </LinearLayout>
+</layout>
